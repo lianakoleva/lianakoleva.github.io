@@ -1,4 +1,5 @@
 const imageInput = document.getElementById('imageInput');
+const { jsPDF } = window.jspdf;
 const gridSizeRange = document.getElementById('gridSizeRange');
 const squareDimensionsLabel = document.getElementById('squareDimensionsLabel');
 const numColorsInput = document.getElementById('numColorsInput');
