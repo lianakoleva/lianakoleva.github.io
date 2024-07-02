@@ -9,7 +9,6 @@
             text-align: center;
         }
         canvas {
-            border: 1px solid black;
             margin-top: 10px;
         }
         body {
@@ -18,26 +17,37 @@
         h2 {
             text-align: center;
         }
+        .hidden {
+            display: none;
+        }
     </style>
     <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
 </head>
 <body>
     <h2>cross stitch pattern maker</h2>
     <div id="container">
+        <br><br>
         <input type="file" id="imageInput" accept="image/*">
         <br><br>
-        <label for="gridSizeRange">Grid dimension:</label>
-        <input type="range" id="gridSizeRange" min="5" max="50" value="10" step="5">
-        <span id="squareDimensionsLabel"></span>
-        <br><br>
-        <label for="numColorsInput">Number of colors:</label>
-        <input type="number" id="numColorsInput" value="5" min="2" max="256">
-        <button id="updateColorsBtn">update</button>
-        <br><br>
-        <button id="saveAsPDFBtn">Save as PDF</button>
-        <br><br>
-        <canvas id="imageCanvas"></canvas>
+        <div id="controls" class="hidden">
+            <label for="gridSizeRange">Grid dimension:</label>
+            <input type="range" id="gridSizeRange" min="5" max="50" value="10" step="5">
+            <span id="squareDimensionsLabel"></span>
+            <br><br>
+            <label for="numColorsInput">Number of colors:</label>
+            <input type="number" id="numColorsInput" value="5" min="2" max="256">
+            <button id="updateColorsBtn">update</button>
+            <br><br>
+            <button id="saveAsPDFBtn">Save as PDF</button>
+            <br><br>
+            <canvas id="imageCanvas"></canvas>
+        </div>
     </div>
+    <script>
+        document.getElementById('imageInput').addEventListener('change', function() {
+            document.getElementById('controls').classList.remove('hidden');
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
