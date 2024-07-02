@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Grid Example</title>
+    <style>
+        #container {
+            text-align: center;
+        }
+        canvas {
+            border: 1px solid black;
+            margin-top: 10px;
+        }
+    </style>
+<script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    
+</head>
+<body>
+    <div id="container">https://jsfiddle.net/xzZ7n/4861/#run
+        <input type="file" id="imageInput" accept="image/*">
+        <br>
+        <label for="gridSizeRange">Square Size (Dimensions):</label>
+        <input type="range" id="gridSizeRange" min="5" max="50" value="10" step="5">
+        <span id="squareDimensionsLabel"> (8x12)</span>
+        <br><br>
+        <label for="numColorsInput">Number of Colors:</label>
+        <input type="number" id="numColorsInput" value="20" min="2" max="256">
+        <button id="updateColorsBtn">Update Colors</button>
+        <br><br>
+        <button id="saveAsPDFBtn">Save as PDF</button>
+        <br><br>
+        <canvas id="imageCanvas"></canvas>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
+
