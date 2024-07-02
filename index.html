@@ -15,13 +15,17 @@
         body {
             font-family: Tahoma, sans-serif;
         }
+        h2 {
+            text-align: center;
+        }
     </style>
     <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
 </head>
 <body>
+    <h2>cross stitch pattern maker</h2>
     <div id="container">
         <input type="file" id="imageInput" accept="image/*">
-        <br>
+        <br><br>
         <label for="gridSizeRange">Grid dimension:</label>
         <input type="range" id="gridSizeRange" min="5" max="50" value="10" step="5">
         <span id="squareDimensionsLabel"></span>
