@@ -121,8 +121,9 @@ function saveAsPDF() {
   const pageSizeHeight = canvasHeightMM + 2 * border;
 
   const imageDataUrl = canvas.toDataURL();
+  const orientation = canvasHeightMM > canvasWidthMM ? "portrait" : "landscape";
   const doc = new jsPDF({
-    orientation: "landscape",
+    orientation: orientation,
     unit: "mm",
     format: [canvasWidthMM + 2 * border, canvasHeightMM + 2 * border]
   });
